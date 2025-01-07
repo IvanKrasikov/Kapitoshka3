@@ -1,0 +1,26 @@
+﻿@using Kapitoshka3.Models.StringListTree.Domain.Entity;
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<StringListTree>
+
+<div >
+	<h1 class="text-center">Капитошка</h1>
+
+    <div>
+        @foreach(var str in Model) 
+        {
+            <a style="text-decoration: none; color: #000;"
+                asp-action="Add"
+                asp-controller="Home"
+                asp-route-id=@str.GetId()>
+
+		        <pre style="margin: 0; 
+                            height: 36px;
+                            overflow-y: hidden;">
+                    @str.GetName()
+                </pre> 
+			 </a>
+        }
+	</div>
+</div>
